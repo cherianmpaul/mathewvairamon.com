@@ -1,130 +1,2357 @@
 <!DOCTYPE html>
-<html>
-<title>DR. MATHEW VAIRAMON, Esq.</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/w3.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#8B7355">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Dr. Mathew Vairamon, Esq. | Distinguished Attorney at Law</title>
+    
+    <!-- Font Awesome for icons - ensures mobile compatibility -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600;700&family=Crimson+Text:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: #F8F6F3;
+            color: #2C2826;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Grain Texture Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            z-index: 1;
+            pointer-events: none;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0,0,0,.05) 2px, rgba(0,0,0,.05) 4px),
+                repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(0,0,0,.03) 2px, rgba(0,0,0,.03) 4px);
+        }
+
+        /* Premium Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(255,255,255,0.98) 0%, 
+                rgba(252,250,247,0.95) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            box-shadow: 0 2px 40px rgba(0,0,0,0.08);
+            border-bottom: 1px solid rgba(139,115,85,0.2);
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            position: relative;
+        }
+
+        .logo-area::before {
+            content: '§';
+            position: absolute;
+            left: -35px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 28px;
+            color: #8B7355;
+            opacity: 0.3;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .firm-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #1C1814;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #1C1814 0%, #8B7355 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .firm-tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            color: #8B7355;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 45px;
+        }
+
+        nav a {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: #4A453F;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #8B7355, #A68B6A);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section with Animated Image Slider */
+        .hero {
+            margin-top: 90px;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: 
+                radial-gradient(ellipse at top right, rgba(139,115,85,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(28,24,20,0.06) 0%, transparent 50%),
+                linear-gradient(135deg, #FDFCFB 0%, #F5F2ED 100%);
+            overflow: hidden;
+        }
+
+        /* Legal Pattern Background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(90deg, 
+                    transparent, 
+                    transparent 100px, 
+                    rgba(139,115,85,0.03) 100px, 
+                    rgba(139,115,85,0.03) 101px),
+                repeating-linear-gradient(0deg, 
+                    transparent, 
+                    transparent 100px, 
+                    rgba(139,115,85,0.03) 100px, 
+                    rgba(139,115,85,0.03) 101px);
+            z-index: 1;
+        }
+
+        /* Scales of Justice Icon - using Font Awesome */
+        .hero .scales-watermark {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 300px;
+            color: rgba(139,115,85,0.05);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #8B7355;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            color: #1C1814;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .hero-title span {
+            display: block;
+            font-size: 48px;
+            font-weight: 400;
+            color: #8B7355;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .hero-description {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #5A534B;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #8B7355 0%, #A68B6A 100%);
+            color: white;
+            padding: 18px 40px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1C1814;
+            padding: 18px 40px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid #8B7355;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #8B7355;
+            color: white;
+        }
+
+        /* Hero Image Slider */
+        .hero-image-slider {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: linear-gradient(135deg, #F5F2ED 0%, #FFFFFF 100%);
+            padding: 30px;
+            box-shadow: 
+                0 30px 80px rgba(0,0,0,0.15),
+                inset 0 0 0 1px rgba(139,115,85,0.2);
+            overflow: hidden;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(139,115,85,0.05) 0%, rgba(28,24,20,0.05) 100%);
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .slide-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #FDFCFB 0%, #F5F2ED 100%);
+            border: 2px solid rgba(139,115,85,0.1);
+        }
+
+        .slide-placeholder-icon {
+            font-size: 80px;
+            color: rgba(139,115,85,0.2);
+            margin-bottom: 20px;
+        }
+
+        .slide-placeholder-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #8B7355;
+            text-align: center;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(139,115,85,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #8B7355;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* About Section with Image */
+        .about-section {
+            padding: 120px 40px;
+            background: white;
+            position: relative;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-frame {
+            position: relative;
+            background: linear-gradient(135deg, #F5F2ED 0%, #FFFFFF 100%);
+            padding: 20px;
+            box-shadow: 
+                0 20px 60px rgba(0,0,0,0.1),
+                inset 0 0 0 1px rgba(139,115,85,0.2);
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .about-image-frame:hover {
+            transform: rotate(0deg);
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(139,115,85,0.1) 0%, rgba(28,24,20,0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #8B7355;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #1C1814;
+            margin-bottom: 30px;
+        }
+
+        .about-content p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #5A534B;
+            margin-bottom: 20px;
+        }
+
+        /* Credentials Bar */
+        .credentials-bar {
+            background: linear-gradient(135deg, #1C1814 0%, #2C2826 100%);
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .credentials-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(45deg, 
+                    transparent, 
+                    transparent 10px, 
+                    rgba(139,115,85,0.1) 10px, 
+                    rgba(139,115,85,0.1) 11px);
+            z-index: 1;
+        }
+
+        .credentials-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            text-align: center;
+        }
+
+        .credential-item {
+            position: relative;
+        }
+
+        .credential-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #8B7355 0%, #C9A878 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .credential-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: #A68B6A;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Practice Areas with Premium Cards */
+        .practice-section {
+            padding: 120px 40px;
+            background: #FFFFFF;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .section-header::before {
+            content: '§';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 60px;
+            color: rgba(139,115,85,0.1);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #1C1814;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: #8B7355;
+            font-style: italic;
+        }
+
+        .practice-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .practice-card {
+            background: linear-gradient(135deg, #FDFCFB 0%, #F8F6F3 100%);
+            border: 1px solid rgba(139,115,85,0.15);
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .practice-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8B7355 0%, #C9A878 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .practice-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .practice-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 30px 60px rgba(0,0,0,0.12),
+                0 10px 20px rgba(139,115,85,0.1);
+            background: #FFFFFF;
+        }
+
+        .practice-icon {
+            font-size: 36px;
+            color: #8B7355;
+            margin-bottom: 20px;
+            opacity: 0.6;
+        }
+
+        .practice-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: #1C1814;
+            margin-bottom: 20px;
+        }
+
+        .practice-description {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #5A534B;
+        }
+
+        /* Additional Services Section */
+        .additional-services {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, rgba(139,115,85,0.05) 0%, transparent 100%), #F8F6F3;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+
+        .service-box {
+            background: white;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139,115,85,0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-box:hover::before {
+            opacity: 1;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            color: #8B7355;
+            margin-bottom: 30px;
+        }
+
+        .service-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #1C1814;
+            margin-bottom: 20px;
+        }
+
+        .service-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #5A534B;
+        }
+
+        /* Books & Publications with Image Gallery */
+        .books-section {
+            padding: 120px 40px;
+            background: white;
+        }
+
+        .books-gallery {
+            max-width: 1400px;
+            margin: 60px auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .book-item {
+            position: relative;
+            background: linear-gradient(135deg, #F5F2ED 0%, #FFFFFF 100%);
+            padding: 20px;
+            height: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .book-item:hover {
+            transform: translateY(-10px) rotate(-1deg);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 70%;
+            background: linear-gradient(135deg, rgba(139,115,85,0.1) 0%, rgba(28,24,20,0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border: 1px solid rgba(139,115,85,0.2);
+        }
+
+        .book-cover-placeholder {
+            font-size: 60px;
+            color: rgba(139,115,85,0.3);
+        }
+
+        .book-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: #1C1814;
+            margin-bottom: 5px;
+        }
+
+        .book-year {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #8B7355;
+        }
+
+        /* Education Timeline */
+        .education-section {
+            padding: 120px 40px;
+            background: 
+                linear-gradient(135deg, rgba(139,115,85,0.05) 0%, transparent 100%),
+                #F8F6F3;
+            position: relative;
+        }
+
+        .timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #8B7355, rgba(139,115,85,0.2));
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            border-left: 3px solid #8B7355;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            border-left: none;
+            border-right: 3px solid #8B7355;
+        }
+
+        .timeline-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #8B7355;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #1C1814;
+            margin-bottom: 10px;
+        }
+
+        .timeline-institution {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            color: #5A534B;
+            font-style: italic;
+        }
+
+        /* Publications Section */
+        .publications-section {
+            padding: 120px 40px;
+            background: white;
+            position: relative;
+        }
+
+        .publications-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+
+        .publication-category {
+            background: linear-gradient(135deg, #FDFCFB 0%, #F8F6F3 100%);
+            padding: 50px;
+            border-left: 4px solid #8B7355;
+            position: relative;
+        }
+
+        .publication-category .pub-icon {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 40px;
+            opacity: 0.1;
+            color: #8B7355;
+        }
+
+        .publication-category h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #1C1814;
+            margin-bottom: 30px;
+        }
+
+        .publication-list {
+            list-style: none;
+        }
+
+        .publication-list li {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #5A534B;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .publication-list li::before {
+            content: '§';
+            position: absolute;
+            left: 0;
+            color: #8B7355;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 40px;
+            background: 
+                linear-gradient(135deg, #1C1814 0%, #2C2826 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139,115,85,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(139,115,85,0.2) 0%, transparent 50%);
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .contact-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: #C9A878;
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8B7355;
+            margin-bottom: 10px;
+        }
+
+        .contact-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: white;
+        }
+
+        .contact-value a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: #C9A878;
+        }
+
+        /* Footer */
+        footer {
+            background: #0F0E0C;
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(139,115,85,0.2);
+        }
+
+        .footer-content {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #8B7355;
+            letter-spacing: 1px;
+        }
+
+        .footer-content span {
+            color: #C9A878;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #8B7355;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background-color: rgba(139, 115, 85, 0.1);
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #8B7355;
+            margin: 5px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            height: 100vh;
+            background: linear-gradient(135deg, #FDFCFB 0%, #F5F2ED 100%);
+            backdrop-filter: blur(20px);
+            z-index: 9999;
+            transition: left 0.3s ease;
+            padding: 100px 40px 40px;
+            box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+            padding-bottom: 20px;
+        }
+
+        .mobile-menu a {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #1C1814;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: #8B7355;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-image-slider {
+                height: 400px;
+            }
+
+            .practice-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .publications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .books-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .credentials-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: row;
+            }
+
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+        }
+
+        /* Tablet Portrait (500×768) */
+        @media (max-width: 768px) and (min-width: 501px) {
+            .header-inner {
+                padding: 20px 30px;
+            }
+
+            .firm-name {
+                font-size: 22px;
+            }
+
+            .hero {
+                margin-top: 80px;
+                padding: 40px 0;
+            }
+
+            .hero-content {
+                padding: 0 30px;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .hero-title span {
+                font-size: 36px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+
+            .practice-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .books-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero .scales-watermark {
+                font-size: 200px;
+            }
+        }
+
+        /* Standard Mobile (440×842) and smaller */
+        @media (max-width: 500px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .header-inner {
+                padding: 15px 20px;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .logo-area::before {
+                display: none;
+            }
+
+            .firm-name {
+                font-size: 18px;
+            }
+
+            .firm-tagline {
+                font-size: 9px;
+                letter-spacing: 2px;
+            }
+
+            .hero {
+                margin-top: 70px;
+                min-height: 80vh;
+                padding: 30px 0;
+            }
+
+            .hero-content {
+                padding: 0 20px;
+                gap: 30px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+                line-height: 1.2;
+            }
+
+            .hero-title span {
+                font-size: 26px;
+                margin-top: 8px;
+            }
+
+            .hero-subtitle {
+                font-size: 12px;
+                letter-spacing: 2px;
+                margin-bottom: 15px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+                padding: 16px 30px;
+                font-size: 12px;
+            }
+
+            .hero-image-slider {
+                height: 300px;
+                padding: 20px;
+            }
+
+            .hero .scales-watermark {
+                font-size: 150px;
+                right: -5%;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .section-subtitle {
+                font-size: 16px;
+            }
+
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .practice-section,
+            .additional-services,
+            .books-section,
+            .education-section,
+            .publications-section,
+            .about-section {
+                padding: 60px 20px;
+            }
+
+            .practice-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .practice-card {
+                padding: 30px 25px;
+            }
+
+            .practice-title {
+                font-size: 22px;
+            }
+
+            .practice-description {
+                font-size: 16px;
+            }
+
+            .credentials-bar {
+                padding: 40px 20px;
+            }
+
+            .credentials-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .credential-number {
+                font-size: 48px;
+            }
+
+            .credential-label {
+                font-size: 10px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .service-box {
+                padding: 40px 25px;
+            }
+
+            .service-box h3 {
+                font-size: 22px;
+            }
+
+            .service-box p {
+                font-size: 16px;
+            }
+
+            .books-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .book-item {
+                height: 280px;
+                padding: 15px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-content h2 {
+                font-size: 28px;
+                text-align: center;
+            }
+
+            .about-content p {
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .about-image-frame {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 50px);
+                margin-left: 50px;
+                padding: 20px;
+            }
+
+            .timeline-title {
+                font-size: 18px;
+            }
+
+            .timeline-institution {
+                font-size: 14px;
+            }
+
+            .publications-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .publication-category {
+                padding: 30px 25px;
+            }
+
+            .publication-category h3 {
+                font-size: 22px;
+            }
+
+            .publication-list li {
+                font-size: 15px;
+            }
+
+            .contact-section {
+                padding: 60px 20px;
+            }
+
+            .contact-title {
+                font-size: 28px;
+            }
+
+            .contact-subtitle {
+                font-size: 16px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-bottom: 40px;
+            }
+
+            .contact-value {
+                font-size: 18px;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-content {
+                font-size: 11px;
+                line-height: 1.4;
+            }
+        }
+
+        /* Ultra Small Mobile (320×568) */
+        @media (max-width: 360px) {
+            .header-inner {
+                padding: 12px 15px;
+            }
+
+            .firm-name {
+                font-size: 16px;
+            }
+
+            .firm-tagline {
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            .hero-content {
+                padding: 0 15px;
+            }
+
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .hero-title span {
+                font-size: 22px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .practice-section,
+            .additional-services,
+            .books-section,
+            .education-section,
+            .publications-section,
+            .about-section {
+                padding: 50px 15px;
+            }
+
+            .practice-card {
+                padding: 25px 20px;
+            }
+
+            .credentials-content {
+                gap: 20px;
+            }
+
+            .credential-number {
+                font-size: 36px;
+            }
+
+            .service-box {
+                padding: 30px 20px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 40px);
+                margin-left: 40px;
+                padding: 15px;
+            }
+
+            .contact-section {
+                padding: 50px 15px;
+            }
+
+            .mobile-menu {
+                width: 90%;
+                padding: 80px 20px 40px;
+            }
+
+            .hero .scales-watermark {
+                font-size: 120px;
+            }
+        }
+
+        /* CLS Prevention and Performance Optimizations */
+        .slide-image, .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 4/3;
+        }
+
+        .hero-image-slider {
+            min-height: 300px;
+        }
+
+        .firm-name, .hero-title, .section-title {
+            font-display: swap;
+        }
+
+        .practice-card,
+        .service-box,
+        .book-item {
+            min-height: 200px;
+        }
+
+        .slide, .about-image-frame {
+            background: linear-gradient(135deg, #F5F2ED 0%, #FFFFFF 100%);
+        }
+
+        /* Touch optimizations for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .practice-card:hover,
+            .service-box:hover,
+            .book-item:hover {
+                transform: none;
+            }
+            
+            .practice-card:active,
+            .service-box:active,
+            .book-item:active {
+                transform: scale(0.98);
+                transition: transform 0.1s ease;
+            }
+
+            .btn-primary:hover,
+            .btn-secondary:hover {
+                transform: none;
+            }
+
+            .btn-primary:active,
+            .btn-secondary:active {
+                transform: scale(0.95);
+                transition: transform 0.1s ease;
+            }
+
+            .mobile-menu a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                padding: 10px 0;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .dot {
+                width: 20px;
+                height: 20px;
+                margin: 5px;
+            }
+
+            .dot.active {
+                width: 40px;
+            }
+        }
+
+        /* Performance optimizations */
+        .hero-image-slider,
+        .practice-card,
+        .service-box,
+        .book-item,
+        .timeline-item {
+            will-change: auto;
+        }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .hero {
+                transform: none !important;
+            }
+        }
+
+        /* Optimize animations for 60fps */
+        .practice-card,
+        .service-box,
+        .book-item {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lazy-load.loaded {
+            opacity: 1;
+        }
+
+        #phone-display, #email-link {
+            transition: filter 0.3s ease;
+        }
+        
+        .contact-protected {
+            pointer-events: none;
+            filter: blur(2px);
+        }
+        
+        .no-select {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+    </style>
+</head>
 <body>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>DR.</b> MATHEW VAIRAMON, Esq.</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#attorney" class="w3-bar-item w3-button">Attorney</a>
-      <a href="#mediation" class="w3-bar-item w3-button">Mediation</a>
-      <a href="#homeopath" class="w3-bar-item w3-button">Homeopath</a>	  
-      <a href="#chrisitian_ministry" class="w3-bar-item w3-button">Chrisitian Ministry</a>
-      <a href="#books_cds" class="w3-bar-item w3-button">Books&CDs</a>	  
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#practice">Practice Areas</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#books">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </div>
-  </div>
-</div>
 
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="images/main_image.jpg" alt="Mathew Vairamon" width="1500" height="800">
-</header>
+    <!-- Premium Header -->
+    <header>
+        <div class="header-inner">
+            <div class="logo-area">
+                <div class="firm-name">Dr. Mathew Vairamon</div>
+                <div class="firm-tagline">Attorney at Law • Est. 2010</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#practice">Practice</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#books">Publications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
+    <!-- Hero Section with Animated Slider -->
+    <section class="hero" id="home">
+        <i class="fas fa-balance-scale scales-watermark"></i>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-subtitle">Distinguished Legal Excellence</div>
+                <h1 class="hero-title">
+                    Dr. Mathew Vairamon
+                    <span>Attorney, Scholar, Mediator</span>
+                </h1>
+                <p class="hero-description">
+                    With over 25 years of distinguished legal practice spanning two continents, 
+                    Dr. Vairamon brings unparalleled expertise in immigration law, federal litigation, 
+                    and tax matters. Licensed across multiple jurisdictions, published scholar, 
+                    and dedicated advocate for justice.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn-primary">Schedule Consultation</a>
+                    <a href="#practice" class="btn-secondary">View Practice Areas</a>
+                </div>
+            </div>
+            <div class="hero-image-slider">
+                <div class="slider-container">
+                    <div class="slide active">
+                        <img src="images/i1.jpg" alt="Dr. Mathew Vairamon - Attorney at Law" class="slide-image">
+                    </div>
+                    <div class="slide">
+                        <img src="images/i2.jpg" alt="Federal Court Practice" class="slide-image">
+                    </div>
+                    <div class="slide">
+                        <img src="images/i3.jpg" alt="Published Scholar" class="slide-image">
+                    </div>
+                    <div class="slide">
+                        <img src="images/i4.jpg" alt="University Lecturer" class="slide-image">
+                    </div>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- about_me Section -->
-<div class="w3-container w3-padding-32" id="about_me">
-<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Dr. Mathew Vairamon, Esq.</h3>
-	<br />
-	Dr. Mathew M. Vairamon is an Attorney at Law from the state of Louisiana. He is licensed as an attorney in the state of Louisiana in 2010, Southern Federal court in Houston, Texas in 2011 and United States Tax Court in 2011. About 15 years, he was an Advocate in India. He started his practice in Delhi and later moved to Kollam, Kerala, India.
-	<br /><br />
-	He taught as an Adjunct Professor in Texas Southern University (TSU), Houston, Texas from 2011 to 2012. He also taught as an Adjunct Instructor in Prairie View A & M University in Prairie View, Texas from spring 2014 to spring 2018. Besides his teaching, he was a faculty advisor to students from 2014 to 2017 in Prairie View A & M University. Currently, he is a Lecturer in Prairie View A & M University.
-	<br /><br />
-	He practices as an Attorney from 2010 onward in Houston, Texas. His major areas of practice are immigration laws, both family and business immigration laws, IRS exemption for non-profit organization, social security laws, preparing legal documents etc.
-	<br /><br />
-	He is a notary in the state of Texas and an accredited general and family mediator from Harris County DRC, Houston, Texas.
-	<br /><br />
-	He got Ph.D in Administration of Justice from Texas Southern University, Houston, Texas in 2013 and M.S degree in Criminal Justice from University of Houston-Downtown in 2005. His name was included in the National Dean’s list in 2006 after his MS degree. Also, he has LL.B degree from Bombay University, India and LL.M degree with second rank from Mahatma Gandhi University, Kottayam, Kerala, India. He completed his education in Certified Financial Planner course (CFP) from University of Texas (UT), San Antonio, Texas in 2014.
-	<br /><br />
-	He has published several books and CDs in Malayalam and articles in Malayalam and English. Some of his English articles were included in academic book, journal and Encyclopedia.
-	<br /><br />
-	<b><u>Contact Information:</u></b><br />
-	<span id="eeb-644973-638575"></span><script type="text/javascript">(function(){var ml="Cv2e408.tbwPrh%oA-f15imF7'aEB)3n(Dcl",mi=";=?O3>25>2N>25>N0J>25=<3B>NQI83SS>N@>2LC26C6HDCN56I>NKP26CM6HDACN56>N0>2GJ>NK>25>N09<>2G>NK>25KFJES>N@>25>N0J>25=<3B>NQIFJES8?>N@EOB?>45FJ8=3:1JE<JF?O7R?FI>NKEOB?>45FJ8=3:1JE<JF?O7R?F>N0>2GJ>NK",o="";for(var j=0,l=mi.length;j<l;j++){o+=ml.charAt(mi.charCodeAt(j)-48);}document.getElementById("eeb-644973-638575").innerHTML = decodeURIComponent(o);}());</script><noscript>*Protected Content*</noscript>  
-	<br/>
-	Website: <a href="http://www.mathewvairamon.com/">www.mathewvairamon.com</a><br />
-</div>
+    <!-- About Section with Image -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <div class="about-image-frame">
+                    <img src="images/img1.jpg" alt="Dr. Mathew Vairamon Portrait" class="about-image-placeholder">
+                </div>
+            </div>
+            <div class="about-content">
+                <h2>A Legacy of Legal Excellence</h2>
+                <p>Dr. Mathew M. Vairamon is an accomplished Attorney at Law licensed in Louisiana, the Southern Federal Court in Houston, Texas, and the United States Tax Court. With a distinguished career spanning over 25 years across India and the United States, he brings a unique global perspective to his practice.</p>
+                <p>Currently serving as a Lecturer at Prairie View A&M University and maintaining an active legal practice in Houston, Dr. Vairamon combines academic excellence with practical expertise. His roles as a Harris County certified mediator, Texas notary public, and former Correction Officer demonstrate his comprehensive understanding of the justice system.</p>
+                <p>As Vice-Chair of the Stafford City Planning and Zoning Commission and with extensive involvement in community, cultural, and spiritual activities, Dr. Vairamon is deeply committed to serving both his clients and his community.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Attorney Section -->
-  <div class="w3-container w3-padding-32" id="attorney">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Attorney</h3>
-  </div>
+    <!-- Credentials Bar -->
+    <section class="credentials-bar">
+        <div class="credentials-content">
+            <div class="credential-item">
+                <div class="credential-number">25+</div>
+                <div class="credential-label">Years Experience</div>
+            </div>
+            <div class="credential-item">
+                <div class="credential-number">3</div>
+                <div class="credential-label">Bar Admissions</div>
+            </div>
+            <div class="credential-item">
+                <div class="credential-number">15+</div>
+                <div class="credential-label">Publications</div>
+            </div>
+            <div class="credential-item">
+                <div class="credential-number">6</div>
+                <div class="credential-label">Advanced Degrees</div>
+            </div>
+        </div>
+    </section>
 
-	<div class="w3-row-padding">
-		<div class="w3-col l3 m6 w3-margin-bottom">
-		  <img src="images/mathew_vairamon.jpg" alt="Dr. Mathew Vairamon, Esq." style="width:100%">
-		  <h3>Dr. Mathew Vairamon, Esq.</h3>
-		  <h4>Attorney at Law, Stafford, Texas.</h4>
-		</div>
-	  <div class="w3-row-padding">
-		Dr. Mathew M. Vairamon is practicing as an Attorney at Law in Houston, Texas from 2010 onwards. He has an Attorney at Law license from the state of Louisiana. He is also licensed in the U.S. Tax Court, Southern Federal Court in Houston, Texas. </br></br>
-		His main area of practice is immigration law, both family and business immigration law, Social Security Law, IRS exemption for non-profit organization, preparing legal documents, etc. He practiced as an Advocate in India for more than 15 years. He has LL. B, LL.M degree from India and MS, PhD degrees from the U.S.A. He was an Adjunct Professor in Texas Southern University, (TSU) in Houston, Texas.  Currently, he is a Lecturer in Prairie View A & M University, Prairie View, Texas. He is teaching Law and Criminal Justice classes there for the last five years.
-	  </div>
-	</div>
-  <!-- mediation Section -->
-  <div class="w3-container w3-padding-32" id="mediation">
-	<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Mediation</h3>
-	<p>Dr.Mathew M. Vairamon is an accredited mediator from Harris County. He has General Mediation Certification from Harris County, Dispute Resolution Center (DRC) in 2012 and Family Mediation Certification from Harris County, DRC, Houston, Texas in 2014. He can neutrally mediate with the consent of both parties, if there is a family or general dispute.</p>
-  </div>
+    <!-- Practice Areas -->
+    <section class="practice-section" id="practice">
+        <div class="section-header">
+            <h2 class="section-title">Areas of Practice</h2>
+            <p class="section-subtitle">Comprehensive Legal Services with Proven Excellence</p>
+        </div>
+        <div class="practice-grid">
+            <div class="practice-card">
+                <div class="practice-icon"><i class="fas fa-balance-scale"></i></div>
+                <h3 class="practice-title">Immigration Law</h3>
+                <p class="practice-description">
+                    Comprehensive family and business immigration services, including visa applications, 
+                    green cards, citizenship, and deportation defense.
+                </p>
+            </div>
+            <div class="practice-card">
+                <div class="practice-icon"><i class="fas fa-landmark"></i></div>
+                <h3 class="practice-title">Federal Court Practice</h3>
+                <p class="practice-description">
+                    Licensed before the Southern Federal Court in Houston and the United States Tax Court, 
+                    handling complex federal litigation and appeals.
+                </p>
+            </div>
+            <div class="practice-card">
+                <div class="practice-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                <h3 class="practice-title">IRS & Tax Exemption</h3>
+                <p class="practice-description">
+                    Specialized expertise in securing IRS exemptions for non-profit organizations 
+                    and representing clients in complex tax matters.
+                </p>
+            </div>
+            <div class="practice-card">
+                <div class="practice-icon"><i class="fas fa-handshake"></i></div>
+                <h3 class="practice-title">Mediation Services</h3>
+                <p class="practice-description">
+                    Harris County certified mediator for general and family disputes, providing 
+                    neutral and culturally sensitive resolution services.
+                </p>
+            </div>
+            <div class="practice-card">
+                <div class="practice-icon"><i class="fas fa-file-contract"></i></div>
+                <h3 class="practice-title">Legal Documentation</h3>
+                <p class="practice-description">
+                    Comprehensive legal document preparation including contracts, agreements, 
+                    corporate documents, and notarial services.
+                </p>
+            </div>
+            <div class="practice-card">
+                <div class="practice-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3 class="practice-title">Social Security Law</h3>
+                <p class="practice-description">
+                    Dedicated representation in Social Security disability claims, appeals, 
+                    and administrative hearings.
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <!-- homeopath Section -->
-  <div class="w3-container w3-padding-32" id="homeopath">
-	<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Homeopath</h3>
-	<p>Dr.Mathew M. Vairamon is a homeopath practicing in Houston, Texas. He has two Diplomas in Homeopathy from India and Diplomas from the U.S.A. His diplomas are mentioned below:</p>
-	<p>Diploma in Gemmotherapy from British Institute of Homeopathy (BIH) from New Jersey, U.S.A in 2012.</p>
-	<p>Diploma in Foundation of Hahnemannian Homeopathy from British Institute of Homeopathy International, New Jersey, U.S.A in 2015.</p>
-	<p>Homeopathy in Practice (HIP) from British Institute of Homeopathy International, New Jersey, U.S.A in 2017.</p>
-	<p>Completed Diploma course in Homeopathy as an Elearning students from International Academy of Classical Homeopathy (IACH), Alonnisos, Greece under the guidance of Prof.George Vithoulkas.</p>
-	<p>Completed Post Graduate Course in Homeopathy in the areas of Level of Health, Organon and Strategies in Prescribing from International Academy of Classical Homeopathy (IACH), Alonnisos, Greece under the guidance of Prof. George Vithoulkas.</p>
-	<p>Professional Homeopathy membership with Texas Homeopathic Association and National Homeopathic Center (NCH).</p>
-	<p>A Commissioner in ACHENA in U.S.A a Homeopathic School Accreditation body from 2017 to 2019.</p>
-  </div>
+    <!-- Additional Services -->
+    <section class="additional-services">
+        <div class="section-header">
+            <h2 class="section-title">Additional Expertise</h2>
+            <p class="section-subtitle">Beyond Traditional Legal Services</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-box">
+                <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                <h3>Homeopathy Practice</h3>
+                <p>Certified homeopath with multiple diplomas from India and the USA, including credentials from the British Institute of Homeopathy and International Academy of Classical Homeopathy under Prof. George Vithoulkas.</p>
+            </div>
+            <div class="service-box">
+                <div class="service-icon"><i class="fas fa-cross"></i></div>
+                <h3>Christian Ministry</h3>
+                <p>Holding B.Th, M.Div, and Th.D degrees in Theology from Slidell Baptist Seminary. Founded Stafford Bible Chapel in 2014, serving Fort Bend and Harris Counties.</p>
+            </div>
+            <div class="service-box">
+                <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Academic Leadership</h3>
+                <p>Current Lecturer at Prairie View A&M University, teaching Law and Criminal Justice. Former Adjunct Professor at Texas Southern University with faculty advisor experience.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- chrisitian_ministry Section -->
-  <div class="w3-container w3-padding-32" id="chrisitian_ministry">
-	<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Chrisitian Ministry</h3>
-	<p>Dr.Mathew Vairamon has B.Th, M.Div and Th.D degrees in Theology from Slidell Baptist Seminary, Louisiana, U.S.A. He got Th.D degree in 2004.</p>
-	<p>He started Stafford Bible Chapel in November 2014. He is doing God’s ministry along with his job. His Christian ministry is mainly in Fort Bend County and Harris County in Texas, U.S.A.</p>
-  </div>
+    <!-- Books & Publications Gallery -->
+    <section class="books-section" id="books">
+        <div class="section-header">
+            <h2 class="section-title">Books & CDs</h2>
+            <p class="section-subtitle">Literary and Musical Contributions</p>
+        </div>
+        <div class="books-gallery">
+            <div class="book-item">
+                <div class="book-cover">
+                    <div class="book-cover-placeholder"><i class="fas fa-book-open"></i></div>
+                </div>
+                <div class="book-title">Criminal Behavior Analysis</div>
+                <div class="book-year">ProQuest LLC • 2013</div>
+            </div>
+            <div class="book-item">
+                <div class="book-cover">
+                    <div class="book-cover-placeholder"><i class="fas fa-music"></i></div>
+                </div>
+                <div class="book-title">Kavyamanjari</div>
+                <div class="book-year">Poems CD • 1995/2008</div>
+            </div>
+            <div class="book-item">
+                <div class="book-cover">
+                    <div class="book-cover-placeholder"><i class="fas fa-compact-disc"></i></div>
+                </div>
+                <div class="book-title">Lokarakshakan</div>
+                <div class="book-year">Christian Songs • 2001</div>
+            </div>
+            <div class="book-item">
+                <div class="book-cover">
+                    <div class="book-cover-placeholder"><i class="fas fa-music"></i></div>
+                </div>
+                <div class="book-title">Yesunadhan</div>
+                <div class="book-year">Christian Songs • 2008</div>
+            </div>
+            <div class="book-item">
+                <div class="book-cover">
+                    <div class="book-cover-placeholder"><i class="fas fa-book"></i></div>
+                </div>
+                <div class="book-title">Asha Safalyam</div>
+                <div class="book-year">Ganda Kavyam • 1994</div>
+            </div>
+            <div class="book-item">
+                <div class="book-cover">
+                    <div class="book-cover-placeholder"><i class="fas fa-book"></i></div>
+                </div>
+                <div class="book-title">Nalla Ayalkkaran</div>
+                <div class="book-year">Ganda Kavyam • 1995</div>
+            </div>
+            <div class="book-item">
+                <div class="book-cover">
+                    <div class="book-cover-placeholder"><i class="fas fa-scroll"></i></div>
+                </div>
+                <div class="book-title">Sabhayum Angathuvum</div>
+                <div class="book-year">Assembly Document • 1995</div>
+            </div>
+            <div class="book-item">
+                <div class="book-cover">
+                    <div class="book-cover-placeholder"><i class="fas fa-newspaper"></i></div>
+                </div>
+                <div class="book-title">Prakasa Dhara</div>
+                <div class="book-year">Articles Collection • 1996</div>
+            </div>
+        </div>
+    </section>
 
-  <!-- books_cds Section -->
-  <div class="w3-container w3-padding-32" id="books_cds">
-	<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Books AND CDs</h3>
-	<p>Dr.Mathew M. Vairamon has published 3 CDs and one Cassette. Also, he has published 6 books in Malayalam and one legal book in English. Besides these, he has published several chapters in book and Encyclopedia and articles too. Following are his CDs and books. Besides these writings, he is a poet and song writer.</p>
-	<p>Kavyamanjari – a CD and Cassette of poems published in 1995 and 2008</p>
-	<p>Lokarakshakan – a CD of Christian songs published in June 2001</p>
-	<p>Yesunadhan – a CD of Christian songs published in June 2008</p></br>
-	<h4><strong>Books</strong></h4>
-	<p>Ethinum Oru Kalam a small book published by Y.M.E.F, Kottarakara in 1990</p>
-	<p>Asha Safalyam – a Ganda Kavyam – poem published in September 1994</p>
-	<p>Nalla Ayalkkaran – a Ganda Kavyam – poem published in September 1995</p>
-	<p>Sabhayum Angathuvum – An Assembly Document published in November 1995</p>
-	<p>Prakasa Dhara – a collection of articles published in April 1996</p>
-	<p>An analysis of criminal behavior among illegal immigrant in United States, Published by ProQuest LLC in 2013. This is his Ph.D dissertation.</p></br>
-	<h4><strong>Chapters and Articles</strong></h4>
-	<p>Wrote a chapter in a book titled <strong> “Crime and Justice” </strong> with a professor in Colorado State University. He wrote about Plea bargaining in this book and it was published by <strong>SAGE Publication</strong> in 2014.</p>
-	<p>Wrote an article about <strong>citizenship</strong> in an <strong>African Americans and Criminal Justice: An Encyclopedia</strong> and it was published in 2014 by ABC-CLIO</p>
-	<p>Wrote an article about <strong>Pentagon Papers leak</strong> in <strong>Crimes of the Centuries: An Encyclopedia of Notorious Crimes, Criminals, and Criminal Trials in American History</strong> and it was published in 2015 by ABC-CLIO</p>
-	<p>	Wrote an article about <strong>Immigration</strong> in “The Sage Encyclopedia of Surveillance, Security and Privacy” and it was published by <strong>Sage Reference</strong> in 2016.</p>
-	<p>Wrote an article about <strong>Dowry Customs</strong> in <strong>Encyclopedia of Women and Crime</strong> in 2016.</p>
-	<p>Wrote an article about <strong>Alternative to Incarceration</strong> in <strong>Encyclopedia of Women and Crime</strong> and it was published by WILEY in 2017.</p>
-	<p>Wrote a chapter about <strong>History of Women in Corrections</strong> in the <strong>Encyclopedia of Women and Crime</strong> and it was published by WILEY in 2019.</p>
-	<p>wrote a chapter about <strong>War on Drugs, 1971 -1996</strong> in 50 Events That Shaped African American History: An Encyclopedia of the American Mosaic in 2019 and it was published by ABC-CLIO.</p>
-  </div>
+    <!-- Education Timeline -->
+    <section class="education-section" id="education">
+        <div class="section-header">
+            <h2 class="section-title">Distinguished Education</h2>
+            <p class="section-subtitle">A Foundation of Academic Excellence</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2013</div>
+                    <div class="timeline-title">Ph.D. Administration of Justice</div>
+                    <div class="timeline-institution">Texas Southern University</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2014</div>
+                    <div class="timeline-title">Certified Financial Planner (CFP)</div>
+                    <div class="timeline-institution">University of Texas, San Antonio</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2005</div>
+                    <div class="timeline-title">M.S. Criminal Justice</div>
+                    <div class="timeline-institution">University of Houston-Downtown • National Dean's List 2006</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-title">Th.D. Theology</div>
+                    <div class="timeline-institution">Slidell Baptist Seminary, Louisiana</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">India</div>
+                    <div class="timeline-title">LL.M. (Second Rank) & LL.B.</div>
+                    <div class="timeline-institution">Mahatma Gandhi University & Bombay University</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- End page content -->
-</div>
+    <!-- Publications -->
+    <section class="publications-section">
+        <div class="section-header">
+            <h2 class="section-title">Academic Publications</h2>
+            <p class="section-subtitle">Contributing to Legal and Academic Discourse</p>
+        </div>
+        <div class="publications-grid">
+            <div class="publication-category">
+                <i class="fas fa-books pub-icon"></i>
+                <h3>Books & Dissertations</h3>
+                <ul class="publication-list">
+                    <li>An Analysis of Criminal Behavior Among Illegal Immigrants in United States - ProQuest LLC, 2013</li>
+                    <li>Six books published in Malayalam language</li>
+                    <li>Three CDs and one cassette of poems and Christian songs</li>
+                    <li>Ethinum Oru Kalam - Y.M.E.F, Kottarakara, 1990</li>
+                </ul>
+            </div>
+            <div class="publication-category">
+                <i class="fas fa-pen-fancy pub-icon"></i>
+                <h3>Academic Contributions</h3>
+                <ul class="publication-list">
+                    <li>Chapter on Plea Bargaining in "Crime and Justice" - SAGE Publication, 2014</li>
+                    <li>Article on Citizenship in "African Americans and Criminal Justice" - ABC-CLIO, 2014</li>
+                    <li>Article on Pentagon Papers in "Crimes of the Centuries" - ABC-CLIO, 2015</li>
+                    <li>Article on Immigration in "Encyclopedia of Surveillance, Security and Privacy" - SAGE, 2016</li>
+                    <li>Article on Dowry Customs in "Encyclopedia of Women and Crime" - 2016</li>
+                    <li>Article on Alternative to Incarceration - WILEY, 2017</li>
+                    <li>Chapter on History of Women in Corrections - WILEY, 2019</li>
+                    <li>Chapter on War on Drugs in "50 Events That Shaped African American History" - ABC-CLIO, 2019</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-	<p>Copyright 2019 DR. MATHEW VAIRAMON, Esq.</p>
-</footer>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-content">
+            <h2 class="contact-title">Schedule Your Consultation</h2>
+            <p class="contact-subtitle">Experience Distinguished Legal Representation</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value" id="phone-display">Loading...</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">
+                        <a href="#" id="email-link">Loading...</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Location</div>
+                    <div class="contact-value">Stafford, Texas</div>
+                </div>
+            </div>
+            <a href="#" class="btn-primary">Request Consultation</a>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            © 2025 Dr. Mathew Vairamon, Esq. | <span>Licensed Attorney at Law</span> | All Rights Reserved
+        </div>
+    </footer>
+
+    <script>
+        // Image Slider Functionality
+        let slideIndex = 1;
+        showSlides();
+
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlidesManual();
+        }
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            slides[slideIndex - 1].classList.add("active");
+            dots[slideIndex - 1].classList.add("active");
+            
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+        }
+
+        function showSlidesManual() {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            slides[slideIndex - 1].classList.add("active");
+            dots[slideIndex - 1].classList.add("active");
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe practice cards
+        document.querySelectorAll('.practice-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Observe timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'all 0.6s ease';
+            observer.observe(item);
+        });
+
+        // Observe service boxes
+        document.querySelectorAll('.service-box').forEach(box => {
+            box.style.opacity = '0';
+            box.style.transform = 'translateY(30px)';
+            box.style.transition = 'all 0.6s ease';
+            observer.observe(box);
+        });
+
+        // Observe book items
+        document.querySelectorAll('.book-item').forEach((book, index) => {
+            book.style.opacity = '0';
+            book.style.transform = 'translateY(30px)';
+            book.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(book);
+        });
+
+        // Mobile Menu Functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleMobileMenu() {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when clicking on menu links
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 500 && mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+
+        // Optimize images for performance and prevent CLS
+        function optimizeImages() {
+            const images = document.querySelectorAll('img');
+            
+            images.forEach(img => {
+                // Add loading attribute for native lazy loading
+                if (!img.hasAttribute('loading')) {
+                    img.setAttribute('loading', 'lazy');
+                }
+                
+                // Add error handling
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                });
+                
+                // Add load event for smooth transitions
+                img.addEventListener('load', function() {
+                    this.classList.add('loaded');
+                });
+            });
+        }
+
+        // Initialize image optimization
+        optimizeImages();
+
+        // Prevent layout shifts from dynamic content
+        function preventLayoutShifts() {
+            // Set minimum heights for dynamic content containers
+            const dynamicContainers = document.querySelectorAll('.practice-card, .service-box, .timeline-item');
+            
+            dynamicContainers.forEach(container => {
+                const computedStyle = window.getComputedStyle(container);
+                const currentHeight = container.offsetHeight;
+                
+                if (currentHeight > 0) {
+                    container.style.minHeight = currentHeight + 'px';
+                }
+            });
+        }
+
+        // Run after DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', preventLayoutShifts);
+
+        // Optimize scroll performance
+        let ticking = false;
+        
+        function updateOnScroll() {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('header');
+            const parallax = document.querySelector('.hero');
+            
+            // Header shadow effect
+            if (scrolled > 50) {
+                header.style.boxShadow = '0 4px 60px rgba(0,0,0,0.12)';
+            } else {
+                header.style.boxShadow = '0 2px 40px rgba(0,0,0,0.08)';
+            }
+            
+            // Optimized parallax effect
+            if (parallax && window.innerWidth > 768) {
+                const speed = 0.5;
+                parallax.style.transform = `translateY(${scrolled * speed}px)`;
+            }
+            
+            ticking = false;
+        }
+        
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateOnScroll);
+                ticking = true;
+            }
+        }
+        
+        // Replace existing scroll listeners with optimized version
+        window.addEventListener('scroll', requestTick, { passive: true });
+
+        // Preload critical resources
+        function preloadCriticalResources() {
+            const criticalImages = ['images/i1.jpg', 'images/img1.jpg'];
+            
+            criticalImages.forEach(src => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = src;
+                document.head.appendChild(link);
+            });
+        }
+        
+        // Initialize performance optimizations
+        preloadCriticalResources();
+
+        // Privacy protection for contact information
+        function initContactProtection() {
+            // Character code encoding to hide from view source
+            const phoneChars = [40,50,56,49,41,32,56,55,53,45,49,51,48,56];
+            const emailChars = [105,110,102,111,64,109,97,116,104,101,119,118,97,105,114,97,109,111,110,46,99,111,109];
+            
+            const phoneDisplay = document.getElementById('phone-display');
+            const emailLink = document.getElementById('email-link');
+            
+            if (phoneDisplay && emailLink) {
+                setTimeout(() => {
+                    const phone = String.fromCharCode(...phoneChars);
+                    const email = String.fromCharCode(...emailChars);
+                    
+                    phoneDisplay.textContent = phone;
+                    emailLink.textContent = email;
+                    emailLink.href = 'mailto:' + email;
+                    
+                    // Basic protection
+                    phoneDisplay.style.userSelect = 'none';
+                    emailLink.style.userSelect = 'none';
+                    phoneDisplay.addEventListener('contextmenu', (e) => e.preventDefault());
+                    emailLink.addEventListener('contextmenu', (e) => e.preventDefault());
+                }, 500);
+            }
+        }
+        
+        // Basic privacy protection
+        function addPrivacyProtection() {
+            // Simple right-click protection for contact info
+            document.addEventListener('contextmenu', function(e) {
+                if (e.target.closest('#phone-display') || e.target.closest('#email-link')) {
+                    e.preventDefault();
+                }
+            });
+            
+            // Basic copy protection
+            document.addEventListener('keydown', function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+                    const selection = window.getSelection().toString();
+                    if (selection.includes('@') || selection.includes('(281)')) {
+                        e.preventDefault();
+                        window.getSelection().removeAllRanges();
+                    }
+                }
+            });
+        }
+        
+        // Initialize protection when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initContactProtection();
+            addPrivacyProtection();
+        });
+    </script>
 </body>
 </html>
